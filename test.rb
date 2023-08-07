@@ -8,5 +8,5 @@ data = File.read('classifier.dat')
 trained_classifier = Marshal.load data
 
 table.map do |item|
-  puts "#{item['headline']} - #{trained_classifier.classify item['short_description']}"
+  puts "#{item['headline']}\ncategorized as: #{item['category']}\tclassifier result: #{trained_classifier.classify item['short_description']}\n"
 end
